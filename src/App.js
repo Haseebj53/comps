@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import ButtonPage from "./pages/ButtonPage";
+import Accordion from "./components/Accordion";
 function App() {
+  const items = [
+    {
+      id: "3edsf",
+      label: "Can I use React on a project",
+      content:
+        "You can use react on any project you want. You can use react on any project you want.",
+    },
+    {
+      id: "43gr",
+      label: "Can I use React on a project",
+      content:
+        "You can use react on any project you want. You can use react on any project you want.",
+    },
+    {
+      id: "54yehgd",
+      label: "Can I use React on a project",
+      content:
+        "You can use react on any project you want. You can use react on any project you want.",
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Accordion items={items} />
+      <ButtonPage />
     </div>
   );
 }
