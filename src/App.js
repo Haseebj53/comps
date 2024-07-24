@@ -1,30 +1,20 @@
-import ButtonPage from "./pages/ButtonPage";
-import Accordion from "./components/Accordion";
+import Dropdown from "./components/Dropdown";
+import  { useState } from 'react';
+
 function App() {
-  const items = [
-    {
-      id: "3edsf",
-      label: "Can I use React on a project",
-      content:
-        "You can use react on any project you want. You can use react on any project you want.",
-    },
-    {
-      id: "43gr",
-      label: "Can I use React on a project",
-      content:
-        "You can use react on any project you want. You can use react on any project you want.",
-    },
-    {
-      id: "54yehgd",
-      label: "Can I use React on a project",
-      content:
-        "You can use react on any project you want. You can use react on any project you want.",
-    },
+    const [selection , setSelection] = useState(null);
+
+    const handleSelect = (selected)=>{
+setSelection(selected);
+    }
+  const options = [
+    { label: "Red", value: "red" },
+    { label: "Green", value: "green" },
+    { label: "Blue", value: "blue" },
   ];
   return (
     <div>
-      <Accordion items={items} />
-      <ButtonPage />
+      <Dropdown options={options} value={selection} onChange={handleSelect}/>
     </div>
   );
 }
